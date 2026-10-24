@@ -1,0 +1,1806 @@
+{
+  "meta": {
+    "trained_at_utc": "2026-10-24 06:44 UTC",
+    "seed": 42,
+    "split": {
+      "train": 24000,
+      "test": 6000,
+      "ann_fit": 21003,
+      "ann_validation": 2997
+    },
+    "cv_folds": 5
+  },
+  "tasks": {
+    "sentiment": {
+      "target": "sentiment",
+      "labels": [
+        "Negative",
+        "Neutral",
+        "Positive"
+      ],
+      "tuning": {
+        "method": "GridSearchCV (grouped, stratified 5-fold, macro-F1)",
+        "grid": {
+          "C": [
+            0.1,
+            1,
+            10
+          ],
+          "ngram_range": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "best_params": {
+          "C": 0.1,
+          "ngram_range": [
+            1,
+            1
+          ]
+        },
+        "results": [
+          {
+            "C": 0.1,
+            "ngram_range": [
+              1,
+              1
+            ],
+            "cv_macro_f1": 1.0,
+            "cv_std": 0.0
+          },
+          {
+            "C": 0.1,
+            "ngram_range": [
+              1,
+              2
+            ],
+            "cv_macro_f1": 1.0,
+            "cv_std": 0.0
+          },
+          {
+            "C": 1,
+            "ngram_range": [
+              1,
+              1
+            ],
+            "cv_macro_f1": 1.0,
+            "cv_std": 0.0
+          },
+          {
+            "C": 1,
+            "ngram_range": [
+              1,
+              2
+            ],
+            "cv_macro_f1": 1.0,
+            "cv_std": 0.0
+          },
+          {
+            "C": 10,
+            "ngram_range": [
+              1,
+              1
+            ],
+            "cv_macro_f1": 1.0,
+            "cv_std": 0.0
+          },
+          {
+            "C": 10,
+            "ngram_range": [
+              1,
+              2
+            ],
+            "cv_macro_f1": 1.0,
+            "cv_std": 0.0
+          }
+        ]
+      },
+      "candidates": {
+        "Logistic Regression (tuned)": {
+          "supports_probabilities": true,
+          "deployable": true,
+          "cv": {
+            "accuracy": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "precision_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "recall_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "f1_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            }
+          },
+          "test": {
+            "accuracy": 1.0,
+            "macro_precision": 1.0,
+            "macro_recall": 1.0,
+            "macro_f1": 1.0,
+            "weighted_precision": 1.0,
+            "weighted_recall": 1.0,
+            "weighted_f1": 1.0,
+            "per_class": {
+              "Negative": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 2513
+              },
+              "Neutral": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 1304
+              },
+              "Positive": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 2183
+              }
+            },
+            "labels": [
+              "Negative",
+              "Neutral",
+              "Positive"
+            ],
+            "confusion_matrix": [
+              [
+                2513,
+                0,
+                0
+              ],
+              [
+                0,
+                1304,
+                0
+              ],
+              [
+                0,
+                0,
+                2183
+              ]
+            ]
+          }
+        },
+        "Multinomial Naive Bayes": {
+          "supports_probabilities": true,
+          "deployable": true,
+          "cv": {
+            "accuracy": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "precision_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "recall_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "f1_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            }
+          },
+          "test": {
+            "accuracy": 1.0,
+            "macro_precision": 1.0,
+            "macro_recall": 1.0,
+            "macro_f1": 1.0,
+            "weighted_precision": 1.0,
+            "weighted_recall": 1.0,
+            "weighted_f1": 1.0,
+            "per_class": {
+              "Negative": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 2513
+              },
+              "Neutral": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 1304
+              },
+              "Positive": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 2183
+              }
+            },
+            "labels": [
+              "Negative",
+              "Neutral",
+              "Positive"
+            ],
+            "confusion_matrix": [
+              [
+                2513,
+                0,
+                0
+              ],
+              [
+                0,
+                1304,
+                0
+              ],
+              [
+                0,
+                0,
+                2183
+              ]
+            ]
+          }
+        },
+        "Linear SVM": {
+          "supports_probabilities": false,
+          "deployable": false,
+          "cv": {
+            "accuracy": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "precision_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "recall_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "f1_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            }
+          },
+          "test": {
+            "accuracy": 1.0,
+            "macro_precision": 1.0,
+            "macro_recall": 1.0,
+            "macro_f1": 1.0,
+            "weighted_precision": 1.0,
+            "weighted_recall": 1.0,
+            "weighted_f1": 1.0,
+            "per_class": {
+              "Negative": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 2513
+              },
+              "Neutral": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 1304
+              },
+              "Positive": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 2183
+              }
+            },
+            "labels": [
+              "Negative",
+              "Neutral",
+              "Positive"
+            ],
+            "confusion_matrix": [
+              [
+                2513,
+                0,
+                0
+              ],
+              [
+                0,
+                1304,
+                0
+              ],
+              [
+                0,
+                0,
+                2183
+              ]
+            ]
+          }
+        },
+        "Majority-class baseline": {
+          "supports_probabilities": true,
+          "deployable": false,
+          "cv": {
+            "accuracy": {
+              "mean": 0.41908333333333336,
+              "std": 0.0001666666666666705
+            },
+            "precision_macro": {
+              "mean": 0.13969444444444443,
+              "std": 5.555555555555314e-05
+            },
+            "recall_macro": {
+              "mean": 0.3333333333333333,
+              "std": 0.0
+            },
+            "f1_macro": {
+              "mean": 0.19687982596144143,
+              "std": 5.518464004524715e-05
+            }
+          },
+          "test": {
+            "accuracy": 0.41883333333333334,
+            "macro_precision": 0.1396111111111111,
+            "macro_recall": 0.3333333333333333,
+            "macro_f1": 0.1967970554837699,
+            "weighted_precision": 0.17542136111111112,
+            "weighted_recall": 0.41883333333333334,
+            "weighted_f1": 0.2472755002153569,
+            "per_class": {
+              "Negative": {
+                "precision": 0.41883333333333334,
+                "recall": 1.0,
+                "f1": 0.5903911664513097,
+                "support": 2513
+              },
+              "Neutral": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1304
+              },
+              "Positive": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 2183
+              }
+            },
+            "labels": [
+              "Negative",
+              "Neutral",
+              "Positive"
+            ],
+            "confusion_matrix": [
+              [
+                2513,
+                0,
+                0
+              ],
+              [
+                1304,
+                0,
+                0
+              ],
+              [
+                2183,
+                0,
+                0
+              ]
+            ]
+          }
+        }
+      },
+      "selected": "Logistic Regression (tuned)"
+    },
+    "complaint_type": {
+      "target": "complaint_type",
+      "labels": [
+        "Billing",
+        "Customer Service",
+        "Delivery",
+        "Packaging",
+        "Pricing",
+        "Product Quality",
+        "Returns & Refunds",
+        "Technical Issue"
+      ],
+      "tuning": {
+        "method": "GridSearchCV (grouped, stratified 5-fold, macro-F1)",
+        "grid": {
+          "C": [
+            0.1,
+            1,
+            10
+          ],
+          "ngram_range": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "best_params": {
+          "C": 0.1,
+          "ngram_range": [
+            1,
+            1
+          ]
+        },
+        "results": [
+          {
+            "C": 0.1,
+            "ngram_range": [
+              1,
+              1
+            ],
+            "cv_macro_f1": 1.0,
+            "cv_std": 0.0
+          },
+          {
+            "C": 0.1,
+            "ngram_range": [
+              1,
+              2
+            ],
+            "cv_macro_f1": 1.0,
+            "cv_std": 0.0
+          },
+          {
+            "C": 1,
+            "ngram_range": [
+              1,
+              1
+            ],
+            "cv_macro_f1": 1.0,
+            "cv_std": 0.0
+          },
+          {
+            "C": 1,
+            "ngram_range": [
+              1,
+              2
+            ],
+            "cv_macro_f1": 1.0,
+            "cv_std": 0.0
+          },
+          {
+            "C": 10,
+            "ngram_range": [
+              1,
+              1
+            ],
+            "cv_macro_f1": 1.0,
+            "cv_std": 0.0
+          },
+          {
+            "C": 10,
+            "ngram_range": [
+              1,
+              2
+            ],
+            "cv_macro_f1": 1.0,
+            "cv_std": 0.0
+          }
+        ]
+      },
+      "candidates": {
+        "Logistic Regression (tuned)": {
+          "supports_probabilities": true,
+          "deployable": true,
+          "cv": {
+            "accuracy": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "precision_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "recall_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "f1_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            }
+          },
+          "test": {
+            "accuracy": 1.0,
+            "macro_precision": 1.0,
+            "macro_recall": 1.0,
+            "macro_f1": 1.0,
+            "weighted_precision": 1.0,
+            "weighted_recall": 1.0,
+            "weighted_f1": 1.0,
+            "per_class": {
+              "Billing": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 587
+              },
+              "Customer Service": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 839
+              },
+              "Delivery": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 1081
+              },
+              "Packaging": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 415
+              },
+              "Pricing": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 415
+              },
+              "Product Quality": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 1192
+              },
+              "Returns & Refunds": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 615
+              },
+              "Technical Issue": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 856
+              }
+            },
+            "labels": [
+              "Billing",
+              "Customer Service",
+              "Delivery",
+              "Packaging",
+              "Pricing",
+              "Product Quality",
+              "Returns & Refunds",
+              "Technical Issue"
+            ],
+            "confusion_matrix": [
+              [
+                587,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                839,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1081,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                415,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                415,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                1192,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                615,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                856
+              ]
+            ]
+          }
+        },
+        "Multinomial Naive Bayes": {
+          "supports_probabilities": true,
+          "deployable": true,
+          "cv": {
+            "accuracy": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "precision_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "recall_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "f1_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            }
+          },
+          "test": {
+            "accuracy": 1.0,
+            "macro_precision": 1.0,
+            "macro_recall": 1.0,
+            "macro_f1": 1.0,
+            "weighted_precision": 1.0,
+            "weighted_recall": 1.0,
+            "weighted_f1": 1.0,
+            "per_class": {
+              "Billing": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 587
+              },
+              "Customer Service": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 839
+              },
+              "Delivery": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 1081
+              },
+              "Packaging": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 415
+              },
+              "Pricing": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 415
+              },
+              "Product Quality": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 1192
+              },
+              "Returns & Refunds": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 615
+              },
+              "Technical Issue": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 856
+              }
+            },
+            "labels": [
+              "Billing",
+              "Customer Service",
+              "Delivery",
+              "Packaging",
+              "Pricing",
+              "Product Quality",
+              "Returns & Refunds",
+              "Technical Issue"
+            ],
+            "confusion_matrix": [
+              [
+                587,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                839,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1081,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                415,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                415,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                1192,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                615,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                856
+              ]
+            ]
+          }
+        },
+        "Linear SVM": {
+          "supports_probabilities": false,
+          "deployable": false,
+          "cv": {
+            "accuracy": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "precision_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "recall_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            },
+            "f1_macro": {
+              "mean": 1.0,
+              "std": 0.0
+            }
+          },
+          "test": {
+            "accuracy": 1.0,
+            "macro_precision": 1.0,
+            "macro_recall": 1.0,
+            "macro_f1": 1.0,
+            "weighted_precision": 1.0,
+            "weighted_recall": 1.0,
+            "weighted_f1": 1.0,
+            "per_class": {
+              "Billing": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 587
+              },
+              "Customer Service": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 839
+              },
+              "Delivery": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 1081
+              },
+              "Packaging": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 415
+              },
+              "Pricing": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 415
+              },
+              "Product Quality": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 1192
+              },
+              "Returns & Refunds": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 615
+              },
+              "Technical Issue": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 856
+              }
+            },
+            "labels": [
+              "Billing",
+              "Customer Service",
+              "Delivery",
+              "Packaging",
+              "Pricing",
+              "Product Quality",
+              "Returns & Refunds",
+              "Technical Issue"
+            ],
+            "confusion_matrix": [
+              [
+                587,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                839,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1081,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                415,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                415,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                1192,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                615,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                856
+              ]
+            ]
+          }
+        },
+        "Majority-class baseline": {
+          "supports_probabilities": true,
+          "deployable": false,
+          "cv": {
+            "accuracy": {
+              "mean": 0.19883331942635935,
+              "std": 0.00014681027319164152
+            },
+            "precision_macro": {
+              "mean": 0.024854164928294918,
+              "std": 1.835128414895519e-05
+            },
+            "recall_macro": {
+              "mean": 0.125,
+              "std": 0.0
+            },
+            "f1_macro": {
+              "mean": 0.041463917712824885,
+              "std": 2.5532971754094e-05
+            }
+          },
+          "test": {
+            "accuracy": 0.19866666666666666,
+            "macro_precision": 0.024833333333333332,
+            "macro_recall": 0.125,
+            "macro_f1": 0.0414349276974416,
+            "weighted_precision": 0.039468444444444445,
+            "weighted_recall": 0.19866666666666666,
+            "weighted_f1": 0.06585391175380052,
+            "per_class": {
+              "Billing": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 587
+              },
+              "Customer Service": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 839
+              },
+              "Delivery": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1081
+              },
+              "Packaging": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 415
+              },
+              "Pricing": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 415
+              },
+              "Product Quality": {
+                "precision": 0.19866666666666666,
+                "recall": 1.0,
+                "f1": 0.3314794215795328,
+                "support": 1192
+              },
+              "Returns & Refunds": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 615
+              },
+              "Technical Issue": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 856
+              }
+            },
+            "labels": [
+              "Billing",
+              "Customer Service",
+              "Delivery",
+              "Packaging",
+              "Pricing",
+              "Product Quality",
+              "Returns & Refunds",
+              "Technical Issue"
+            ],
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                587,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                839,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                1081,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                415,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                415,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                1192,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                615,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                856,
+                0,
+                0
+              ]
+            ]
+          }
+        }
+      },
+      "selected": "Logistic Regression (tuned)"
+    },
+    "priority": {
+      "target": "priority",
+      "labels": [
+        "High",
+        "Low",
+        "Medium"
+      ],
+      "tuning": {
+        "method": "GridSearchCV (grouped, stratified 5-fold, macro-F1)",
+        "grid": {
+          "C": [
+            0.1,
+            1,
+            10
+          ],
+          "ngram_range": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "best_params": {
+          "C": 1,
+          "ngram_range": [
+            1,
+            2
+          ]
+        },
+        "results": [
+          {
+            "C": 0.1,
+            "ngram_range": [
+              1,
+              1
+            ],
+            "cv_macro_f1": 0.4514503390080895,
+            "cv_std": 0.003576686374970874
+          },
+          {
+            "C": 0.1,
+            "ngram_range": [
+              1,
+              2
+            ],
+            "cv_macro_f1": 0.4500393592831607,
+            "cv_std": 0.004378352252610117
+          },
+          {
+            "C": 1,
+            "ngram_range": [
+              1,
+              1
+            ],
+            "cv_macro_f1": 0.4516837513010457,
+            "cv_std": 0.002879291819040937
+          },
+          {
+            "C": 1,
+            "ngram_range": [
+              1,
+              2
+            ],
+            "cv_macro_f1": 0.45347920804474373,
+            "cv_std": 0.005362863723717512
+          },
+          {
+            "C": 10,
+            "ngram_range": [
+              1,
+              1
+            ],
+            "cv_macro_f1": 0.45208746525019194,
+            "cv_std": 0.003356422215101178
+          },
+          {
+            "C": 10,
+            "ngram_range": [
+              1,
+              2
+            ],
+            "cv_macro_f1": 0.44653486624678873,
+            "cv_std": 0.004161192919243636
+          }
+        ]
+      },
+      "candidates": {
+        "Logistic Regression (tuned)": {
+          "supports_probabilities": true,
+          "deployable": true,
+          "cv": {
+            "accuracy": {
+              "mean": 0.47500235741577557,
+              "std": 0.0071494943767263334
+            },
+            "precision_macro": {
+              "mean": 0.45540622277085807,
+              "std": 0.007790632186965243
+            },
+            "recall_macro": {
+              "mean": 0.47375829004566217,
+              "std": 0.007192776894081718
+            },
+            "f1_macro": {
+              "mean": 0.45347920804474373,
+              "std": 0.005362863723717512
+            }
+          },
+          "test": {
+            "accuracy": 0.4761666666666667,
+            "macro_precision": 0.45452477623958804,
+            "macro_recall": 0.4744419700994948,
+            "macro_f1": 0.4525714764304583,
+            "weighted_precision": 0.4551550421157079,
+            "weighted_recall": 0.4761666666666667,
+            "weighted_f1": 0.45383221770634685,
+            "per_class": {
+              "High": {
+                "precision": 0.5115990057995029,
+                "recall": 0.6098765432098765,
+                "f1": 0.5564316287452129,
+                "support": 2025
+              },
+              "Low": {
+                "precision": 0.491640127388535,
+                "recall": 0.6175,
+                "f1": 0.5474290780141844,
+                "support": 2000
+              },
+              "Medium": {
+                "precision": 0.36033519553072624,
+                "recall": 0.1959493670886076,
+                "f1": 0.2538537225319777,
+                "support": 1975
+              }
+            },
+            "labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "confusion_matrix": [
+              [
+                1235,
+                449,
+                341
+              ],
+              [
+                419,
+                1235,
+                346
+              ],
+              [
+                760,
+                828,
+                387
+              ]
+            ]
+          }
+        },
+        "Multinomial Naive Bayes": {
+          "supports_probabilities": true,
+          "deployable": true,
+          "cv": {
+            "accuracy": {
+              "mean": 0.4839591238852087,
+              "std": 0.005726899256612386
+            },
+            "precision_macro": {
+              "mean": 0.46001302162533325,
+              "std": 0.00791934651699365
+            },
+            "recall_macro": {
+              "mean": 0.48245834852463404,
+              "std": 0.005630701195757468
+            },
+            "f1_macro": {
+              "mean": 0.4499875062846274,
+              "std": 0.004302887829403001
+            }
+          },
+          "test": {
+            "accuracy": 0.4846666666666667,
+            "macro_precision": 0.4618041439506868,
+            "macro_recall": 0.48274641871125695,
+            "macro_f1": 0.4548455987701365,
+            "weighted_precision": 0.4623735202037576,
+            "weighted_recall": 0.4846666666666667,
+            "weighted_f1": 0.45621676133223604,
+            "per_class": {
+              "High": {
+                "precision": 0.5135566188197768,
+                "recall": 0.6360493827160494,
+                "f1": 0.5682770791969998,
+                "support": 2025
+              },
+              "Low": {
+                "precision": 0.494949494949495,
+                "recall": 0.637,
+                "f1": 0.5570616528202886,
+                "support": 2000
+              },
+              "Medium": {
+                "precision": 0.3769063180827887,
+                "recall": 0.17518987341772152,
+                "f1": 0.23919806429312132,
+                "support": 1975
+              }
+            },
+            "labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "confusion_matrix": [
+              [
+                1288,
+                454,
+                283
+              ],
+              [
+                437,
+                1274,
+                289
+              ],
+              [
+                783,
+                846,
+                346
+              ]
+            ]
+          }
+        },
+        "Linear SVM": {
+          "supports_probabilities": false,
+          "deployable": false,
+          "cv": {
+            "accuracy": {
+              "mean": 0.46654214594749976,
+              "std": 0.005589101913124483
+            },
+            "precision_macro": {
+              "mean": 0.4477664869188199,
+              "std": 0.005759454204008343
+            },
+            "recall_macro": {
+              "mean": 0.46533809553816174,
+              "std": 0.0056219154135691085
+            },
+            "f1_macro": {
+              "mean": 0.44605416028571715,
+              "std": 0.004544385720974209
+            }
+          },
+          "test": {
+            "accuracy": 0.4721666666666667,
+            "macro_precision": 0.44963603338403996,
+            "macro_recall": 0.4703977183934989,
+            "macro_f1": 0.44697089229896975,
+            "weighted_precision": 0.45025430469483185,
+            "weighted_recall": 0.4721666666666667,
+            "weighted_f1": 0.44825533453513755,
+            "per_class": {
+              "High": {
+                "precision": 0.504695794201715,
+                "recall": 0.6103703703703703,
+                "f1": 0.5525257040679481,
+                "support": 2025
+              },
+              "Low": {
+                "precision": 0.48790162633875445,
+                "recall": 0.615,
+                "f1": 0.544127405441274,
+                "support": 2000
+              },
+              "Medium": {
+                "precision": 0.35631067961165047,
+                "recall": 0.1858227848101266,
+                "f1": 0.2442595673876872,
+                "support": 1975
+              }
+            },
+            "labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "confusion_matrix": [
+              [
+                1236,
+                451,
+                338
+              ],
+              [
+                445,
+                1230,
+                325
+              ],
+              [
+                768,
+                840,
+                367
+              ]
+            ]
+          }
+        },
+        "Majority-class baseline": {
+          "supports_probabilities": true,
+          "deployable": false,
+          "cv": {
+            "accuracy": {
+              "mean": 0.34166667925266403,
+              "std": 0.00020178968425362144
+            },
+            "precision_macro": {
+              "mean": 0.11388889308422132,
+              "std": 6.726322808453852e-05
+            },
+            "recall_macro": {
+              "mean": 0.3333333333333333,
+              "std": 0.0
+            },
+            "f1_macro": {
+              "mean": 0.16977225015082298,
+              "std": 7.472798061175525e-05
+            }
+          },
+          "test": {
+            "accuracy": 0.3333333333333333,
+            "macro_precision": 0.1111111111111111,
+            "macro_recall": 0.3333333333333333,
+            "macro_f1": 0.16666666666666666,
+            "weighted_precision": 0.1111111111111111,
+            "weighted_recall": 0.3333333333333333,
+            "weighted_f1": 0.16666666666666666,
+            "per_class": {
+              "High": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 2025
+              },
+              "Low": {
+                "precision": 0.3333333333333333,
+                "recall": 1.0,
+                "f1": 0.5,
+                "support": 2000
+              },
+              "Medium": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 1975
+              }
+            },
+            "labels": [
+              "High",
+              "Low",
+              "Medium"
+            ],
+            "confusion_matrix": [
+              [
+                0,
+                2025,
+                0
+              ],
+              [
+                0,
+                2000,
+                0
+              ],
+              [
+                0,
+                1975,
+                0
+              ]
+            ]
+          }
+        }
+      },
+      "selected": "Logistic Regression (tuned)",
+      "ann": {
+        "input": "TF-IDF (2,000-term bounded vocabulary, 1-2 grams) reduced to 256 dimensions with TruncatedSVD",
+        "architecture": "256 -> Dense(128, ReLU) -> Dropout(0.3) -> Dense(64, ReLU) -> Dropout(0.2) -> Dense(3, softmax)",
+        "loss": "sparse_categorical_crossentropy",
+        "optimizer": "Adam(lr=1e-3) + ReduceLROnPlateau",
+        "parameters": 41347,
+        "deployed_seed": 2024,
+        "test": {
+          "accuracy": 0.4841666666666667,
+          "macro_precision": 0.46354399557797593,
+          "macro_recall": 0.4824138407042768,
+          "macro_f1": 0.460546288153773,
+          "weighted_precision": 0.4641447012310514,
+          "weighted_recall": 0.4841666666666667,
+          "weighted_f1": 0.4618099328052496,
+          "per_class": {
+            "Low": {
+              "precision": 0.4973989595838335,
+              "recall": 0.6215,
+              "f1": 0.5525672371638142,
+              "support": 2000
+            },
+            "Medium": {
+              "precision": 0.37453183520599254,
+              "recall": 0.20253164556962025,
+              "f1": 0.2628984554715741,
+              "support": 1975
+            },
+            "High": {
+              "precision": 0.5187011919441019,
+              "recall": 0.6232098765432099,
+              "f1": 0.566173171825931,
+              "support": 2025
+            }
+          },
+          "labels": [
+            "Low",
+            "Medium",
+            "High"
+          ],
+          "confusion_matrix": [
+            [
+              1243,
+              346,
+              411
+            ],
+            [
+              815,
+              400,
+              760
+            ],
+            [
+              441,
+              322,
+              1262
+            ]
+          ]
+        },
+        "seed_runs": [
+          {
+            "seed": 42,
+            "best_val_loss": 1.0206583738327026,
+            "accuracy": 0.484,
+            "macro_f1": 0.42806647488745914,
+            "best_epoch": 2,
+            "epochs_run": 10
+          },
+          {
+            "seed": 7,
+            "best_val_loss": 1.018804907798767,
+            "accuracy": 0.48733333333333334,
+            "macro_f1": 0.4563968550530643,
+            "best_epoch": 2,
+            "epochs_run": 10
+          },
+          {
+            "seed": 2024,
+            "best_val_loss": 1.017685890197754,
+            "accuracy": 0.4841666666666667,
+            "macro_f1": 0.460546288153773,
+            "best_epoch": 2,
+            "epochs_run": 10
+          }
+        ],
+        "seed_summary": {
+          "accuracy_mean": 0.4851666666666667,
+          "accuracy_std": 0.0015335748602046976,
+          "macro_f1_mean": 0.44833653936476553,
+          "macro_f1_std": 0.014432857979853516
+        },
+        "history_deployed": {
+          "accuracy": [
+            0.4557444155216217,
+            0.48345473408699036,
+            0.48378804326057434,
+            0.48640671372413635,
+            0.4931676387786865,
+            0.49264392256736755,
+            0.49321526288986206,
+            0.4947388470172882,
+            0.49364376068115234,
+            0.4967861771583557
+          ],
+          "loss": [
+            1.0502099990844727,
+            1.0171219110488892,
+            1.014841079711914,
+            1.0121681690216064,
+            1.0071561336517334,
+            1.007338285446167,
+            1.00630784034729,
+            1.0046335458755493,
+            1.0030467510223389,
+            1.0023244619369507
+          ],
+          "val_accuracy": [
+            0.4824824929237366,
+            0.48481816053390503,
+            0.4824824929237366,
+            0.4818151593208313,
+            0.477477490901947,
+            0.477477490901947,
+            0.47781115770339966,
+            0.4761428236961365,
+            0.47380712628364563,
+            0.47380712628364563
+          ],
+          "val_loss": [
+            1.0177274942398071,
+            1.017685890197754,
+            1.0186607837677002,
+            1.019876480102539,
+            1.0208872556686401,
+            1.0212671756744385,
+            1.0218174457550049,
+            1.0222598314285278,
+            1.0227643251419067,
+            1.023425817489624
+          ],
+          "learning_rate": [
+            0.0010000000474974513,
+            0.0010000000474974513,
+            0.0010000000474974513,
+            0.0010000000474974513,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0002500000118743628,
+            0.0002500000118743628,
+            0.0002500000118743628
+          ],
+          "best_epoch": 2,
+          "epochs_run": 10
+        }
+      },
+      "comparison": {
+        "baseline": "Logistic Regression (tuned)",
+        "bootstrap": {
+          "Keras ANN": {
+            "accuracy": 0.4841666666666667,
+            "ci95": [
+              0.46909525957996223,
+              0.49907915053022484
+            ]
+          },
+          "Logistic Regression (tuned)": {
+            "accuracy": 0.4761666666666667,
+            "ci95": [
+              0.4599837165238343,
+              0.49197382757250635
+            ]
+          },
+          "difference": {
+            "a": "Keras ANN",
+            "b": "Logistic Regression (tuned)",
+            "mean": 0.007881424205078718,
+            "ci95": [
+              0.0006188859281943489,
+              0.015781178686563913
+            ]
+          },
+          "n_distinct_test_texts": 432
+        }
+      }
+    }
+  },
+  "structured_feature_experiment": {
+    "threshold": 0.01,
+    "features": [
+      "channel",
+      "customer_type",
+      "order_value",
+      "days_as_customer"
+    ],
+    "per_target": {
+      "sentiment": {
+        "text_only_cv_macro_f1": 1.0,
+        "with_structured_cv_macro_f1": 1.0,
+        "text_only_cv_accuracy": 1.0,
+        "with_structured_cv_accuracy": 1.0,
+        "macro_f1_gain": 0.0,
+        "adopt_structured_features": false
+      },
+      "complaint_type": {
+        "text_only_cv_macro_f1": 1.0,
+        "with_structured_cv_macro_f1": 1.0,
+        "text_only_cv_accuracy": 1.0,
+        "with_structured_cv_accuracy": 1.0,
+        "macro_f1_gain": 0.0,
+        "adopt_structured_features": false
+      },
+      "priority": {
+        "text_only_cv_macro_f1": 0.45347920804474373,
+        "with_structured_cv_macro_f1": 0.45579024458658324,
+        "text_only_cv_accuracy": 0.47500235741577557,
+        "with_structured_cv_accuracy": 0.4767931752236002,
+        "macro_f1_gain": 0.0023110365418395062,
+        "adopt_structured_features": false
+      }
+    },
+    "decision": "text-only"
+  },
+  "reload_verification": {
+    "sentiment": true,
+    "complaint_type": true,
+    "priority_ann": true,
+    "priority_ann_probabilities_sum_to_one": true,
+    "priority_baseline": true,
+    "all_ok": true
+  }
+}

@@ -1,0 +1,496 @@
+{
+  "validation": {
+    "shape": [
+      30000,
+      9
+    ],
+    "columns": [
+      "feedback_id",
+      "feedback_text",
+      "sentiment",
+      "complaint_type",
+      "priority",
+      "channel",
+      "customer_type",
+      "order_value",
+      "days_as_customer"
+    ],
+    "dtypes": {
+      "feedback_id": "str",
+      "feedback_text": "str",
+      "sentiment": "str",
+      "complaint_type": "str",
+      "priority": "str",
+      "channel": "str",
+      "customer_type": "str",
+      "order_value": "float64",
+      "days_as_customer": "int64"
+    },
+    "missing_values": {
+      "feedback_id": 0,
+      "feedback_text": 0,
+      "sentiment": 0,
+      "complaint_type": 0,
+      "priority": 0,
+      "channel": 0,
+      "customer_type": 0,
+      "order_value": 0,
+      "days_as_customer": 0
+    },
+    "unexpected_labels": {
+      "sentiment": [],
+      "priority": []
+    },
+    "empty_texts": 0,
+    "negative_order_values": 0,
+    "non_positive_days": 0
+  },
+  "n_rows": 30000,
+  "distributions": {
+    "sentiment": {
+      "Negative": 12571,
+      "Positive": 10916,
+      "Neutral": 6513
+    },
+    "complaint_type": {
+      "Product Quality": 5964,
+      "Delivery": 5401,
+      "Technical Issue": 4273,
+      "Customer Service": 4190,
+      "Returns & Refunds": 3078,
+      "Billing": 2939,
+      "Pricing": 2079,
+      "Packaging": 2076
+    },
+    "priority": {
+      "Low": 10200,
+      "Medium": 9900,
+      "High": 9900
+    },
+    "channel": {
+      "Website": 8432,
+      "Mobile App": 7411,
+      "Email": 5420,
+      "Phone": 5121,
+      "In-Store": 3616
+    },
+    "customer_type": {
+      "Returning": 14248,
+      "New": 8340,
+      "Loyal": 7412
+    }
+  },
+  "imbalance_ratio_max_over_min": {
+    "sentiment": 1.93,
+    "complaint_type": 2.87,
+    "priority": 1.03
+  },
+  "duplicates": {
+    "duplicate_rows": 0,
+    "duplicate_feedback_ids": 0,
+    "rows_with_repeated_text": 29982,
+    "distinct_texts": 2154,
+    "duplicate_text_and_labels": 24090
+  },
+  "label_conflicts_per_text": {
+    "sentiment": 0,
+    "complaint_type": 0,
+    "priority": 2093
+  },
+  "rows_in_texts_with_conflicting_labels": {
+    "sentiment": 0,
+    "complaint_type": 0,
+    "priority": 29838
+  },
+  "text_length_chars": {
+    "count": 30000.0,
+    "mean": 130.06,
+    "std": 19.43,
+    "min": 80.0,
+    "25%": 113.0,
+    "50%": 133.0,
+    "75%": 145.0,
+    "max": 177.0
+  },
+  "text_length_words": {
+    "count": 30000.0,
+    "mean": 22.26,
+    "std": 3.74,
+    "min": 14.0,
+    "25%": 19.0,
+    "50%": 23.0,
+    "75%": 25.0,
+    "max": 32.0
+  },
+  "numeric_summary": {
+    "order_value": {
+      "count": 30000.0,
+      "mean": 55.09,
+      "std": 40.72,
+      "min": 8.0,
+      "25%": 28.61,
+      "50%": 44.29,
+      "75%": 68.99,
+      "max": 836.63
+    },
+    "days_as_customer": {
+      "count": 30000.0,
+      "mean": 397.06,
+      "std": 268.33,
+      "min": 1.0,
+      "25%": 200.0,
+      "50%": 339.0,
+      "75%": 534.0,
+      "max": 2385.0
+    }
+  },
+  "top_words": [
+    [
+      "experience",
+      14130
+    ],
+    [
+      "not",
+      7954
+    ],
+    [
+      "issue",
+      6923
+    ],
+    [
+      "order",
+      6867
+    ],
+    [
+      "good",
+      6056
+    ],
+    [
+      "product",
+      6026
+    ],
+    [
+      "handled",
+      5462
+    ],
+    [
+      "support",
+      5219
+    ],
+    [
+      "update",
+      5083
+    ],
+    [
+      "expected",
+      4955
+    ],
+    [
+      "very",
+      4646
+    ],
+    [
+      "service",
+      4152
+    ],
+    [
+      "know",
+      3760
+    ],
+    [
+      "let",
+      3760
+    ],
+    [
+      "appreciate",
+      3755
+    ],
+    [
+      "looking",
+      3721
+    ],
+    [
+      "thank",
+      3721
+    ],
+    [
+      "addressed",
+      3694
+    ],
+    [
+      "soon",
+      3694
+    ],
+    [
+      "hope",
+      3694
+    ]
+  ],
+  "top_words_by_sentiment": {
+    "Negative": [
+      [
+        "not",
+        7954
+      ],
+      [
+        "experience",
+        7562
+      ],
+      [
+        "issue",
+        4115
+      ],
+      [
+        "expected",
+        3252
+      ],
+      [
+        "service",
+        3163
+      ],
+      [
+        "frustrating",
+        2942
+      ],
+      [
+        "disappointed",
+        2761
+      ],
+      [
+        "good",
+        2557
+      ],
+      [
+        "unfortunately",
+        2557
+      ],
+      [
+        "much",
+        2525
+      ]
+    ],
+    "Neutral": [
+      [
+        "order",
+        4107
+      ],
+      [
+        "information",
+        2352
+      ],
+      [
+        "update",
+        2175
+      ],
+      [
+        "support",
+        2168
+      ],
+      [
+        "product",
+        1849
+      ],
+      [
+        "issue",
+        1605
+      ],
+      [
+        "contacting",
+        1598
+      ],
+      [
+        "recent",
+        1475
+      ],
+      [
+        "page",
+        1426
+      ],
+      [
+        "like",
+        1328
+      ]
+    ],
+    "Positive": [
+      [
+        "experience",
+        6568
+      ],
+      [
+        "team",
+        3603
+      ],
+      [
+        "good",
+        3499
+      ],
+      [
+        "handled",
+        2978
+      ],
+      [
+        "worked",
+        2219
+      ],
+      [
+        "end",
+        2219
+      ],
+      [
+        "smooth",
+        2158
+      ],
+      [
+        "pleasant",
+        2158
+      ],
+      [
+        "overall",
+        2157
+      ],
+      [
+        "satisfied",
+        2157
+      ]
+    ]
+  },
+  "crosstab_sentiment_priority": {
+    "Negative": {
+      "High": 6327,
+      "Low": 2210,
+      "Medium": 4034
+    },
+    "Neutral": {
+      "High": 1797,
+      "Low": 2322,
+      "Medium": 2394
+    },
+    "Positive": {
+      "High": 1776,
+      "Low": 5668,
+      "Medium": 3472
+    }
+  },
+  "crosstab_complaint_priority": {
+    "Billing": {
+      "High": 1045,
+      "Low": 914,
+      "Medium": 980
+    },
+    "Customer Service": {
+      "High": 1239,
+      "Low": 1582,
+      "Medium": 1369
+    },
+    "Delivery": {
+      "High": 1649,
+      "Low": 1887,
+      "Medium": 1865
+    },
+    "Packaging": {
+      "High": 420,
+      "Low": 1010,
+      "Medium": 646
+    },
+    "Pricing": {
+      "High": 424,
+      "Low": 1016,
+      "Medium": 639
+    },
+    "Product Quality": {
+      "High": 2302,
+      "Low": 1762,
+      "Medium": 1900
+    },
+    "Returns & Refunds": {
+      "High": 1007,
+      "Low": 1015,
+      "Medium": 1056
+    },
+    "Technical Issue": {
+      "High": 1814,
+      "Low": 1014,
+      "Medium": 1445
+    }
+  },
+  "crosstab_complaint_sentiment": {
+    "Billing": {
+      "Negative": 1161,
+      "Neutral": 682,
+      "Positive": 1096
+    },
+    "Customer Service": {
+      "Negative": 1812,
+      "Neutral": 847,
+      "Positive": 1531
+    },
+    "Delivery": {
+      "Negative": 2117,
+      "Neutral": 1248,
+      "Positive": 2036
+    },
+    "Packaging": {
+      "Negative": 745,
+      "Neutral": 477,
+      "Positive": 854
+    },
+    "Pricing": {
+      "Negative": 719,
+      "Neutral": 456,
+      "Positive": 904
+    },
+    "Product Quality": {
+      "Negative": 2739,
+      "Neutral": 1223,
+      "Positive": 2002
+    },
+    "Returns & Refunds": {
+      "Negative": 1382,
+      "Neutral": 644,
+      "Positive": 1052
+    },
+    "Technical Issue": {
+      "Negative": 1896,
+      "Neutral": 936,
+      "Positive": 1441
+    }
+  },
+  "random_split_text_overlap": 0.9985,
+  "split_sizes": {
+    "train": 24000,
+    "test": 6000,
+    "ann_fit": 21003,
+    "ann_validation": 2997
+  },
+  "test_distributions": {
+    "sentiment": {
+      "Negative": 2513,
+      "Positive": 2183,
+      "Neutral": 1304
+    },
+    "complaint_type": {
+      "Product Quality": 1192,
+      "Delivery": 1081,
+      "Technical Issue": 856,
+      "Customer Service": 839,
+      "Returns & Refunds": 615,
+      "Billing": 587,
+      "Pricing": 415,
+      "Packaging": 415
+    },
+    "priority": {
+      "High": 2025,
+      "Low": 2000,
+      "Medium": 1975
+    }
+  },
+  "observations": [
+    "The dataset has 30,000 rows, no missing values, no duplicate rows and no duplicate feedback_id values.",
+    "Sentiment is moderately imbalanced: Negative is the largest class (41.9%) and Neutral the smallest (21.7%).",
+    "There are 8 complaint categories; Product Quality is the largest (19.9%) and Packaging the smallest (6.9%), a 2.87:1 ratio, so minority-class recall is evaluated explicitly.",
+    "Priority is almost balanced (Low 34.0%, Medium 33.0%, High 33.0%).",
+    "Only 2,154 distinct feedback texts exist; 29,982 rows share their text with at least one other row. A random split would leak: 99.9% of randomly chosen test texts also appear in the training set. This project therefore splits by distinct text (no text appears on both sides).",
+    "Sentiment and complaint_type never conflict for the same text (0 and 0 conflicting texts), but 2,093 distinct texts (29,838 rows) occur with more than one priority. Priority therefore cannot be predicted perfectly from the text alone; a ceiling well below 100 % is expected.",
+    "Feedback texts are short: 22.3 words on average (min 14, max 32)."
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "project": "Customer Feedback Analyzer",
+  "trained_at_utc": "2026-10-24 06:44 UTC",
+  "input_schema": {
+    "feedback_text": "str (text only; structured fields were evaluated and not adopted)"
+  },
+  "max_input_chars": 1000,
+  "labels": {
+    "sentiment": [
+      "Negative",
+      "Neutral",
+      "Positive"
+    ],
+    "complaint_type": [
+      "Billing",
+      "Customer Service",
+      "Delivery",
+      "Packaging",
+      "Pricing",
+      "Product Quality",
+      "Returns & Refunds",
+      "Technical Issue"
+    ],
+    "priority": [
+      "Low",
+      "Medium",
+      "High"
+    ]
+  },
+  "models": {
+    "sentiment": {
+      "file": "sentiment_pipeline.joblib",
+      "algorithm": "Logistic Regression (tuned)",
+      "supports_probabilities": true,
+      "best_params": {
+        "C": 0.1,
+        "ngram_range": [
+          1,
+          1
+        ]
+      }
+    },
+    "complaint_type": {
+      "file": "complaint_pipeline.joblib",
+      "algorithm": "Logistic Regression (tuned)",
+      "supports_probabilities": true,
+      "best_params": {
+        "C": 0.1,
+        "ngram_range": [
+          1,
+          1
+        ]
+      }
+    },
+    "priority": {
+      "file": "priority_ann.keras",
+      "preprocessor": "priority_preprocessor.joblib",
+      "algorithm": "Keras feed-forward ANN",
+      "architecture": "256 -> Dense(128, ReLU) -> Dropout(0.3) -> Dense(64, ReLU) -> Dropout(0.2) -> Dense(3, softmax)",
+      "supports_probabilities": true,
+      "class_order": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "baseline_file": "priority_baseline_pipeline.joblib",
+      "baseline_algorithm": "Logistic Regression (tuned)"
+    }
+  },
+  "test_metrics": {
+    "sentiment": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0
+    },
+    "complaint_type": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0
+    },
+    "priority_ann": {
+      "accuracy": 0.4841666666666667,
+      "macro_f1": 0.460546288153773
+    },
+    "priority_baseline": {
+      "accuracy": 0.4761666666666667,
+      "macro_f1": 0.4525714764304583
+    }
+  },
+  "environment": {
+    "python": "3.12.3",
+    "scikit_learn": "1.8.0",
+    "numpy": "2.4.4",
+    "pandas": "3.0.2",
+    "tensorflow": "2.21.0",
+    "joblib": "1.5.3"
+  }
+}
